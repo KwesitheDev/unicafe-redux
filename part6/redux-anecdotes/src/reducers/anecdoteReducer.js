@@ -32,7 +32,7 @@ const reducer = (state = initialState, action) => {
       )
       
     }
-    case 'NEW_NOTE': {
+    case 'NEW_ANECDOTE': {
       return [...state, action.payload]
     }
     default:
@@ -52,7 +52,7 @@ export const voteAnecdote = (id) => {
 
 export const createAnecdote = (content) => {
   return {
-    type: 'NEW_NOTE',
+    type: 'NEW_ANECDOTE',
     payload: {
       content,
       votes: 0,
