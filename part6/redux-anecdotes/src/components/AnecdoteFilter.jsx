@@ -19,4 +19,4 @@ const filterList = () => {
     )
 }
 
-export default filterList
+export default FilterList
