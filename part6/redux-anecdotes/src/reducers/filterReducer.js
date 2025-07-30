@@ -14,3 +14,5 @@ export const filterChange = filter => {
         payload: filter
     }
 }
+
+export default filterReducer
