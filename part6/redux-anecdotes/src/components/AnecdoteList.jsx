@@ -3,9 +3,12 @@ import { useSelector, useDispatch } from 'react-redux'
 
 
 const AnecdoteList = () => {
-  const anecdotes = useSelector(state => state.anecdotes)
   const dispatch = useDispatch()
-
+  const anecdotes = useSelector(state =>
+    state.anecdotes.filter(a =>
+      a.content.toLowerCase().includes(state.filter.toLowerCase())
+    )
+  )
   const sortedAnecdotes = anecdotes.sort((anecdote1, anecdote2) => anecdote2.votes - anecdote1.votes)
   const handleVote = (id) => {
     console.log('vote', id)
