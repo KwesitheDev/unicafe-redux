@@ -1,4 +1,4 @@
-const filterReducer = (state = 'ALL', action) => {
+const filterReducer = (state = '', action) => {
     switch (action.type) {
         case 'FILTER':
             return action.payload
@@ -7,9 +7,10 @@ const filterReducer = (state = 'ALL', action) => {
     }
 }
 
-export const filterAnecdote = (content) => {
+
+export const filterChange = filter => {
     return {
         type: 'FILTER',
-        payload: content
+        payload: filter
     }
 }
