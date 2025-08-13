@@ -12,7 +12,7 @@ const AnecdoteForm = () => {
   const handleCreate = async (event) => {
     event.preventDefault()
     const content = event.target[0].value
-    dispatch(createAnecdote(newAnecdote))
+    dispatch(createAnecdote(content))
     dispatch(setCreateNotification(content))
     event.target[0].value = ''
   }
