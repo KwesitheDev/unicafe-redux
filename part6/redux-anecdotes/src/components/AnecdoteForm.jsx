@@ -12,7 +12,6 @@ const AnecdoteForm = () => {
   const handleCreate = async (event) => {
     event.preventDefault()
     const content = event.target[0].value
-    const newAnecdote = await noteService.createNew(content)
     dispatch(createAnecdote(newAnecdote))
     dispatch(setCreateNotification(content))
     event.target[0].value = ''
