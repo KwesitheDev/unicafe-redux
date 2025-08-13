@@ -11,14 +11,6 @@ const Notification = () => {
     borderWidth: 1
   }
   const dispatch = useDispatch()
-  useEffect(() => {
-    if (notification) {
-      const timer = setTimeout(() => {
-        dispatch(clearNotification())
-      }, 5000)
-      return () => clearTimeout(timer)
-    }
-  }, [notification, dispatch])
 
   if (!notification) return null
 
