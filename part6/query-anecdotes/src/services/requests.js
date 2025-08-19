@@ -5,7 +5,12 @@ export const getAnecdotes = async () => {
     return res.data
 }
 
-export const createAnecdote = async (content) => {
-    const res = await axios.post(baseUrl, content)
+export const createAnecdote = async (newAnecdote) => {
+    const res = await axios.post(baseUrl, newAnecdote)
+    return res.data
+}
+
+export const updateNote = async (updatedNote) =>{
+    const res = await axios.put(`${baseUrl}/${updatedNote.id}`, updatedNote)
     return res.data
 }
