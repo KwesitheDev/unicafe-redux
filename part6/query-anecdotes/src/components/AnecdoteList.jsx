@@ -24,10 +24,12 @@ const AnecdoteList = () => {
   const handleVote = (anecdote) => {
     voteMutation.mutate({ ...anecdote, votes: anecdote.votes + 1 })
   }
+    
+  const sortedAnecdotes = [...anecdotes].sort((anec1,anec2) => (anec2.votes-anec1.votes))
 
   return (
     <div>
-      {anecdotes.map((anecdote) => (
+      {sortedAnecdotes.map((anecdote) => (
         <div key={anecdote.id}>
           <div>{anecdote.content}</div>
           <div>
