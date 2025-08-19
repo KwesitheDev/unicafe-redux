@@ -15,6 +15,9 @@ const App = () => {
   if (result.isLoading) {
     return <div><i>Loading...</i></div>
   }
+  if(result.isError){
+    return <div>Anecdote service not available</div>
+  }
 
   const handleVote = (anecdote) => {
     console.log('vote')
